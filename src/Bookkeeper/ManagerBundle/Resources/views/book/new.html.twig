@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <h1>Create new book</h1>
+
+    {{ form(form, {attr: {novalidate: 'novalidate'}}) }}
+
+    <ul>
+        <li><a href="{{ path('book') }}">Book manager</a></li>
+    </ul>
+
+
+    {#<div class="container">#}
+        {#<h2>Form control: input</h2>#}
+        {#<p>The form below contains two input elements; one of type text and one of type password:</p>#}
+        {#<form>#}
+            {#<div class="form-group">#}
+                {#<label for="usr">Name:</label>#}
+                {#<input type="text" class="form-control" id="usr">#}
+            {#</div>#}
+            {#<div class="form-group">#}
+                {#<label for="pwd">Password:</label>#}
+                {#<input type="password" class="form-control" id="pwd">#}
+            {#</div>#}
+        {#</form>#}
+    {#</div>#}
+
+{% endblock -%}

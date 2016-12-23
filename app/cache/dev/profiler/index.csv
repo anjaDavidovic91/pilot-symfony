@@ -1,0 +1,12 @@
+063795,127.0.0.1,GET,http://localhost:8000/book/,1482506142,,200
+ef680d,127.0.0.1,GET,http://localhost:8000/book/new,1482506146,,200
+a6fe37,127.0.0.1,GET,http://localhost:8000/book/,1482506148,,200
+63601a,127.0.0.1,GET,http://localhost:8000/book/show/14,1482506149,,200
+0b6b7e,127.0.0.1,GET,http://localhost:8000/book/edit/14,1482506161,,200
+4b3ade,127.0.0.1,PUT,http://localhost:8000/book/update/14,1482506165,,302
+dc30dc,127.0.0.1,GET,http://localhost:8000/book/show/14,1482506165,,200
+5ed409,127.0.0.1,GET,http://localhost:8000/book/,1482506169,,200
+951d80,127.0.0.1,GET,http://localhost:8000/book/new,1482506170,,200
+b165f8,127.0.0.1,POST,http://localhost:8000/book/create,1482506178,,302
+16626d,127.0.0.1,GET,http://localhost:8000/book/show/16,1482506178,,200
+f44acc,127.0.0.1,GET,http://localhost:8000/book/,1482506187,,200

@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <h1>Show</h1>
+
+    <h3>Book #{{ book.id }} - {{ book.title }}</h3>
+
+    <h4>No. of Pages: {{ book.pages }}</h4>
+
+    <p>Desctiption {{ book.description }}</p>
+
+    <ul>
+        <li><a href="{{ path('book') }}">Book manager</a></li>
+        <li><a href="{{ path('book_edit', {'id':book.id}) }}">Edit book</a></li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+
+{% endblock -%}

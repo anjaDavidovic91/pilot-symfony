@@ -1,0 +1,3 @@
+bookkeeper_manager:
+    resource: "@BookkeeperManagerBundle/Resources/config/routing.yml"
+    prefix:   /book

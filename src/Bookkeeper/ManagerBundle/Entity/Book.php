@@ -11,6 +11,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\Table(name="book")
  */
+
+
 class Book {
 
     /**
@@ -42,6 +44,13 @@ class Book {
      */
 
     protected $pages;
+
+    /**
+     * Many Book have One Author.
+     * @ORM\Column(type="integer", name="author_id")
+     * @ORM\OneToMany(targetEntity="Author", mappedBy="id")
+     */
+    protected $author;
 
     /**
      * Get id
@@ -79,7 +88,7 @@ class Book {
     /**
      * Set description
      *
-     * @param \description $description
+     * @param string $description
      * @return Book
      */
     public function setDescription($description)
@@ -92,7 +101,7 @@ class Book {
     /**
      * Get description
      *
-     * @return \description
+     * @return string 
      */
     public function getDescription()
     {
@@ -120,5 +129,28 @@ class Book {
     public function getPages()
     {
         return $this->pages;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \Bookkeeper\ManagerBundle\Entity\Author $author
+     * @return Book
+     */
+    public function setAuthor(\Bookkeeper\ManagerBundle\Entity\Author $author = null)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Bookkeeper\ManagerBundle\Entity\Author 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }

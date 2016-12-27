@@ -1,0 +1,43 @@
+<?php
+
+namespace Bookkeeper\ManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
+
+/**
+ * Class Author
+ * @package Bookkeeper\ManagerBundle\Entity
+ * @ORM\Entity
+ * @ORM\Table(name="authors")
+ */
+
+class Author{
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=150)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=500)
+     */
+    protected $firstname;
+
+
+    /**
+     * @ORM\Column(type="string", length=150)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=500)
+     */
+    protected  $lastname;
+
+
+
+}

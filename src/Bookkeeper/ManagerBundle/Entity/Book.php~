@@ -11,6 +11,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\Table(name="book")
  */
+
+
 class Book {
 
     /**
@@ -28,7 +30,7 @@ class Book {
     protected $title;
 
     /**
-     * @ORM\Column(type="description", length=150)
+     * @ORM\Column(type="string", length=150)
      * @Assert\NotBlank()
      * @Assert\Length(min=5, max=500)
      */
@@ -42,4 +44,11 @@ class Book {
      */
 
     protected $pages;
+
+    /**
+     * Many Book have One Author.
+     * @ORM\ManyToOne(targetEntity="Author")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
+     */
+    protected $author;
 }

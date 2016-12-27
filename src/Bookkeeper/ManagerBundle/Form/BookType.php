@@ -10,7 +10,7 @@ class BookType extends AbstractType{
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('description')->add('pages');
+        $builder->add('title')->add('description')->add('pages')->add('author');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
@@ -18,8 +18,8 @@ class BookType extends AbstractType{
         $resolver->setDefaults(array('data_class' => 'Bookkeeper\ManagerBundle\Entity\Book'));
     }
 
-    public function getName()
-    {
-        return 'bookkeeper_managerbundle_book';
-    }
+//    public function getName()
+//    {
+//        return 'bookkeeper_managerbundle_book';
+//    }
 }

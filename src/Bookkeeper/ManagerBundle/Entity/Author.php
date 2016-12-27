@@ -38,10 +38,14 @@ class Author{
      */
     protected  $lastname;
 
+//    /**
+//     * @ORM\ManyToOne(targetEntity="Book", inversedBy="author")
+//     * @ORM\JoinColumn(name="id", referencedColumnName="author_id")
+//     *
+//     */
+
     /**
-     * @ORM\ManyToOne(targetEntity="Book", inversedBy="author")
-     * @ORM\JoinColumn(name="id", referencedColumnName="author_id")
-     *
+     * @ORM\OneToMany(targetEntity="Book", mappedBy="author")
      */
     protected $books;
 
@@ -122,5 +126,17 @@ class Author{
     public function getBooks()
     {
         return $this->books;
+    }
+
+    /**
+     * Generates the magic method
+     *
+     */
+
+    public function __toString(){
+        // to show the name of the Category in the select
+        return $this->firstname." ".$this->lastname;
+        // to show the id of the Category in the select
+        // return $this->id;
     }
 }

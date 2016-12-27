@@ -105,13 +105,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        if (0 === strpos($pathinfo, '/author')) {
+            // author
+            if ($pathinfo === '/author/index') {
+                return array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\AuthorController::indexAction',  '_route' => 'author',);
+            }
+
+            // new_author
+            if ($pathinfo === '/author/new') {
+                return array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\AuthorController::newAction',  '_route' => 'new_author',);
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/book')) {
             // book
-            if (rtrim($pathinfo, '/') === '/book') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'book');
-                }
-
+            if ($pathinfo === '/book/index') {
                 return array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::indexAction',  '_route' => 'book',);
             }
 
@@ -125,14 +134,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::newAction',  '_route' => 'book_new',);
             }
 
-            // book_edit
-            if (0 === strpos($pathinfo, '/book/edit') && preg_match('#^/book/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_edit')), array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::editAction',));
-            }
-
             // book_create
             if ($pathinfo === '/book/create') {
                 return array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::createAction',  '_route' => 'book_create',);
+            }
+
+            // book_edit
+            if (0 === strpos($pathinfo, '/book/edit') && preg_match('#^/book/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_edit')), array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::editAction',));
             }
 
             // book_update
@@ -145,6 +154,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_delete')), array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::deleteAction',));
             }
 
+        }
+
+        // logout
+        if ($pathinfo === '/logout') {
+            return array('_route' => 'logout');
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

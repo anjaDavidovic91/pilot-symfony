@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  * @package Bookkeeper\ManagerBundle\Controller
  * @Route("/book", name="book_prefix")
  */
+
 class BookController extends Controller {
 
 
@@ -45,12 +46,25 @@ class BookController extends Controller {
     {
         $em = $this->getDoctrine()->getManager();
         $book = $em->getRepository('BookkeeperManagerBundle:Book')->find($id);
+        
 
         $delete_form = $this->createFormBuilder()
             ->setAction($this->generateUrl('book_delete',array('id'=>$id)))
             ->setMethod('DELETE')
             ->add('submit','submit', array('label' => 'Delete book'))
             ->getForm();
+
+
+//        $repository = $this->getDoctrine()
+//            ->getRepository('BookkeeperManagerBundle:Book');
+//
+//        $query = $repository->createQueryBuilder('b')
+//            ->getQuery();
+//
+//        $productss = $query->getResult();
+//
+//        var_dump($productss);
+//        die();
 
         return $this->render('BookkeeperManagerBundle:book:show.html.twig', array(
             'book' => $book,

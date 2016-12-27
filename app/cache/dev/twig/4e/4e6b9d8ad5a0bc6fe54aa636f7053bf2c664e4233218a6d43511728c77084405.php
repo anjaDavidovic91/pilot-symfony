@@ -21,69 +21,71 @@ class __TwigTemplate_5457d4eb93c0defce33d1393ca3a6dff0972af373a203696e84977ed5f5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f44fb746a0bb435dfb1d0c268152ab1da1a326f0ae15cc3962012fdbe54bf19b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f44fb746a0bb435dfb1d0c268152ab1da1a326f0ae15cc3962012fdbe54bf19b->enter($__internal_f44fb746a0bb435dfb1d0c268152ab1da1a326f0ae15cc3962012fdbe54bf19b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BookkeeperManagerBundle:book:new.html.twig"));
+        $__internal_3097ef2af10e05d4840ab503294196a8caeff7818d5025f9eb85157ffdaa82dd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3097ef2af10e05d4840ab503294196a8caeff7818d5025f9eb85157ffdaa82dd->enter($__internal_3097ef2af10e05d4840ab503294196a8caeff7818d5025f9eb85157ffdaa82dd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BookkeeperManagerBundle:book:new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f44fb746a0bb435dfb1d0c268152ab1da1a326f0ae15cc3962012fdbe54bf19b->leave($__internal_f44fb746a0bb435dfb1d0c268152ab1da1a326f0ae15cc3962012fdbe54bf19b_prof);
+        $__internal_3097ef2af10e05d4840ab503294196a8caeff7818d5025f9eb85157ffdaa82dd->leave($__internal_3097ef2af10e05d4840ab503294196a8caeff7818d5025f9eb85157ffdaa82dd_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_87e632deec5b89c1942e594ec4352bcf42115a35bab858c89025f1c202fa7885 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_87e632deec5b89c1942e594ec4352bcf42115a35bab858c89025f1c202fa7885->enter($__internal_87e632deec5b89c1942e594ec4352bcf42115a35bab858c89025f1c202fa7885_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_542014ce4ebbb075ee9ebf343c2fae569a9dfb3151080cb689413a50e20ee1af = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_542014ce4ebbb075ee9ebf343c2fae569a9dfb3151080cb689413a50e20ee1af->enter($__internal_542014ce4ebbb075ee9ebf343c2fae569a9dfb3151080cb689413a50e20ee1af_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
         echo "<h1>Create new book</h1>
-
+    <div class=\"col-xs-4\">
     ";
         // line 7
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form', array("attr" => array("novalidate" => "novalidate")));
         echo "
-
+    </div>
+    <div class=\"col-xs-12\">
     <ul>
         <li><a href=\"";
-        // line 10
+        // line 11
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("book");
         echo "\">Book manager</a></li>
     </ul>
+    <div>
 
 
     ";
-        // line 15
-        echo "        ";
-        // line 16
-        echo "        ";
         // line 17
         echo "        ";
         // line 18
-        echo "            ";
-        // line 19
-        echo "                ";
-        // line 20
-        echo "                ";
-        // line 21
-        echo "            ";
-        // line 22
-        echo "            ";
-        // line 23
-        echo "                ";
-        // line 24
-        echo "                ";
-        // line 25
-        echo "            ";
-        // line 26
         echo "        ";
+        // line 19
+        echo "        ";
+        // line 20
+        echo "            ";
+        // line 21
+        echo "                ";
+        // line 22
+        echo "                ";
+        // line 23
+        echo "            ";
+        // line 24
+        echo "            ";
+        // line 25
+        echo "                ";
+        // line 26
+        echo "                ";
         // line 27
-        echo "    ";
+        echo "            ";
         // line 28
+        echo "        ";
+        // line 29
+        echo "    ";
+        // line 30
         echo "
 ";
         
-        $__internal_87e632deec5b89c1942e594ec4352bcf42115a35bab858c89025f1c202fa7885->leave($__internal_87e632deec5b89c1942e594ec4352bcf42115a35bab858c89025f1c202fa7885_prof);
+        $__internal_542014ce4ebbb075ee9ebf343c2fae569a9dfb3151080cb689413a50e20ee1af->leave($__internal_542014ce4ebbb075ee9ebf343c2fae569a9dfb3151080cb689413a50e20ee1af_prof);
 
     }
 
@@ -99,7 +101,7 @@ class __TwigTemplate_5457d4eb93c0defce33d1393ca3a6dff0972af373a203696e84977ed5f5
 
     public function getDebugInfo()
     {
-        return array (  83 => 28,  81 => 27,  79 => 26,  77 => 25,  75 => 24,  73 => 23,  71 => 22,  69 => 21,  67 => 20,  65 => 19,  63 => 18,  61 => 17,  59 => 16,  57 => 15,  50 => 10,  44 => 7,  40 => 5,  34 => 3,  11 => 1,);
+        return array (  85 => 30,  83 => 29,  81 => 28,  79 => 27,  77 => 26,  75 => 25,  73 => 24,  71 => 23,  69 => 22,  67 => 21,  65 => 20,  63 => 19,  61 => 18,  59 => 17,  51 => 11,  44 => 7,  40 => 5,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -117,12 +119,14 @@ class __TwigTemplate_5457d4eb93c0defce33d1393ca3a6dff0972af373a203696e84977ed5f5
 {% block body -%}
 
     <h1>Create new book</h1>
-
+    <div class=\"col-xs-4\">
     {{ form(form, {attr: {novalidate: 'novalidate'}}) }}
-
+    </div>
+    <div class=\"col-xs-12\">
     <ul>
         <li><a href=\"{{ path('book') }}\">Book manager</a></li>
     </ul>
+    <div>
 
 
     {#<div class=\"container\">#}

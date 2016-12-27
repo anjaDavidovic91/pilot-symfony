@@ -45,10 +45,16 @@ class Book {
 
     protected $pages;
 
+//    /**
+//     * Many Book have One Author.
+//     * @ORM\Column(type="integer", name="author_id")
+//     * @ORM\OneToMany(targetEntity="Author", mappedBy="id")
+//     */
+
     /**
      * Many Book have One Author.
-     * @ORM\Column(type="integer", name="author_id")
-     * @ORM\OneToMany(targetEntity="Author", mappedBy="id")
+     * @ORM\ManyToOne(targetEntity="Author", inversedBy="Author")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
     protected $author;
 

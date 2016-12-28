@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <h1>Show</h1>
+
+    <h3>Author #{{ author.id }} - {{ author.firstname }} {{ author.lastname }}</h3>
+
+    {#<h4>No. of Pages: {{ book.pages }}</h4>#}
+
+    {#<p>Desctiption: {{ book.description }}</p>#}
+
+    {#<p>Author: {{ book.getAuthor().getFirstname() }} {{ book.getAuthor().getLastname() }}</p>#}
+
+    <h3>Books</h3>
+
+    {%  for book in books %}
+        <ul>
+            <li>{{ book.title }}</li>
+        </ul>
+    {% endfor %}
+    {#<ul>#}
+        {#<li><a href="{{ path('book') }}">Book manager</a></li>#}
+        {#<li><a href="{{ path('book_edit', {'id':book.id}) }}">Edit book</a></li>#}
+        {#<li>{{ form(delete_form) }}</li>#}
+    {#</ul>#}
+
+{% endblock %}

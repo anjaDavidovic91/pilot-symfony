@@ -116,6 +116,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\AuthorController::newAction',  '_route' => 'new_author',);
             }
 
+            // show_author
+            if (0 === strpos($pathinfo, '/author/show') && preg_match('#^/author/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'show_author')), array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\AuthorController::showAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/book')) {

@@ -80,4 +80,37 @@ class AuthorController extends Controller {
         ));
     }
 
+    /**
+     * @Route("/show/{id}", name="show_author")
+     */
+    public function showAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $repository = $em->getRepository('BookkeeperManagerBundle:Author');
+
+        $author = $repository->find($id);
+
+        $books = $author->getBooks();
+
+//        foreach ($books as $book){
+//            var_dump($book->getId());
+//            die();
+//        }
+
+//        $delete_form = $this->createFormBuilder()
+//            ->setAction($this->generateUrl('delete_author', array('id'=>$id)))
+//            ->setMethod('DELETE')
+//            ->add('submit','submit', array('label' => 'Delete author'))
+//            ->getForm();
+
+        return $this->render('BookkeeperManagerBundle:author:show.html.twig', array(
+            'author' => $author,
+            'books'  => $books
+//            'delete_form'=>$delete_form->createView()
+        ));
+
+
+    }
+
 }

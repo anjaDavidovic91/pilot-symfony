@@ -53,10 +53,18 @@ class Book {
 
     /**
      * Many Book have One Author.
-     * @ORM\ManyToOne(targetEntity="Author", inversedBy="Author")
+     * @ORM\ManyToOne(targetEntity="Author", inversedBy="book")
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
     protected $author;
+
+
+    /**
+     * Many Books have Many Categories.
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="book")
+     * @ORM\JoinTable(name="books_categories")
+     */
+    protected $category;
 
     /**
      * Get id

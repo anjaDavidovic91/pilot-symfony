@@ -46,7 +46,8 @@ class BookController extends Controller {
     {
         $em = $this->getDoctrine()->getManager();
         $book = $em->getRepository('BookkeeperManagerBundle:Book')->find($id);
-        
+
+
 
         $delete_form = $this->createFormBuilder()
             ->setAction($this->generateUrl('book_delete',array('id'=>$id)))
@@ -54,7 +55,9 @@ class BookController extends Controller {
             ->add('submit','submit', array('label' => 'Delete book'))
             ->getForm();
 
-
+        $author = $book->getAuthor()->getLastname();
+//        var_dump($author);
+//        die();
 //        $repository = $this->getDoctrine()
 //            ->getRepository('BookkeeperManagerBundle:Book');
 //

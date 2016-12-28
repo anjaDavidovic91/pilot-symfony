@@ -2,30 +2,40 @@
 
 {% block body -%}
 
-    <h1>Create new book</h1>
+
     <div class="col-xs-4">
+    <h3>Create new book</h3>
     {{ form(form, {attr: {novalidate: 'novalidate'}}) }}
     </div>
+
+
+    <div class="col-xs-4 col-xs-offset-3">
+        <h3>Choose category for book</h3>
+            <form>
+                <div class="form-group">
+                    <label for="categories">Categories</label>
+                    <input type="text" class="form-control" id="categories">
+                </div>
+
+                <div class="col-xs-2">
+                    <div class="form-group">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+                <div class="col-xs-2">
+                    <div class="form-group">
+                        <button class="btn btn-default">Add new</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+
     <div class="col-xs-12">
     <ul>
         <li><a href="{{ path('book') }}">Book manager</a></li>
     </ul>
     <div>
 
-
-    {#<div class="container">#}
-        {#<h2>Form control: input</h2>#}
-        {#<p>The form below contains two input elements; one of type text and one of type password:</p>#}
-        {#<form>#}
-            {#<div class="form-group">#}
-                {#<label for="usr">Name:</label>#}
-                {#<input type="text" class="form-control" id="usr">#}
-            {#</div>#}
-            {#<div class="form-group">#}
-                {#<label for="pwd">Password:</label>#}
-                {#<input type="password" class="form-control" id="pwd">#}
-            {#</div>#}
-        {#</form>#}
-    {#</div>#}
 
 {% endblock -%}

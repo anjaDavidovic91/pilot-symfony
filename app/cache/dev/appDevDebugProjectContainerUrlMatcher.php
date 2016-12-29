@@ -159,6 +159,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'book_delete')), array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::deleteAction',));
             }
 
+            // book-category
+            if ($pathinfo === '/book/category') {
+                return array (  '_controller' => 'Bookkeeper\\ManagerBundle\\Controller\\BookController::bookCategory',  '_route' => 'book-category',);
+            }
+
         }
 
         // logout

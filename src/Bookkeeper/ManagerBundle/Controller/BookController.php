@@ -90,8 +90,15 @@ class BookController extends Controller {
 
         $form->add('submit','submit',array('label'=>'Create book'));
 
+        $em = $this->getDoctrine()->getManager();
+
+        $repository = $em->getRepository('BookkeeperManagerBundle:Category');
+
+        $categories = $repository->findAll();
+
         return $this->render('BookkeeperManagerBundle:book:new.html.twig', array(
-            'form'=>$form->createView()
+            'form'=>$form->createView(),
+            'categories'=>$categories
         ));
     }
 
@@ -232,6 +239,35 @@ class BookController extends Controller {
 //        $stmt->execute();
 //        $stmt->closeCursor();
 //    }
+
+    /**
+     * @param Request $request
+     * @Route("/category", name="book-category",requirements={"category" = "\d+"})
+     */
+
+    public function bookCategory(Request $request)
+    {
+        $categoryId = $request->request->get('category');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $qb = $em->createQueryBuilder();
+
+        $products =$qb->select('u')
+            ->from('book', 'u')
+            ->where('u.id = ?1')
+            ->orderBy('u.title', 'ASC');
+
+
+        $repository = $em->getRepository('BookkeeperManagerBundle:Category');
+
+        $query = $repository->createQueryBuilder('c')
+            ->where('c.name = :name')
+            ->setParameter('name', 'bajke')
+            ->getQuery();
+        var_dump($query->getResult());
+        die();
+    }
 
 }
 

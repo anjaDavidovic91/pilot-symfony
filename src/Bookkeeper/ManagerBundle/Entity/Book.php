@@ -62,9 +62,18 @@ class Book {
     /**
      * Many Books have Many Categories.
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="book")
-     * @ORM\JoinTable(name="books_categories")
+     * @ORM\JoinTable(name="book_category")
      */
     protected $category;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->category = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -166,5 +175,38 @@ class Book {
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Add category
+     *
+     * @param \Bookkeeper\ManagerBundle\Entity\Category $category
+     * @return Book
+     */
+    public function addCategory(\Bookkeeper\ManagerBundle\Entity\Category $category)
+    {
+        $this->category[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \Bookkeeper\ManagerBundle\Entity\Category $category
+     */
+    public function removeCategory(\Bookkeeper\ManagerBundle\Entity\Category $category)
+    {
+        $this->category->removeElement($category);
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

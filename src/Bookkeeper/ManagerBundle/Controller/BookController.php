@@ -253,56 +253,49 @@ class BookController extends Controller {
     public function bookCategory(Request $request)
     {
 
-        $finders = [];
-
         $categoryId = $request->request->get('category');
 
         $em = $this->getDoctrine()->getManager();
 
-        $cat = new Category();
-        $cat->setName("poezija");
-        $cat->setDescription("asd");
-        $em->persist($cat);
-        $em->flush();
+        $book = $em->getRepository('BookkeeperManagerBundle:Book');
 
-            $book = new Book();
-            $book->setTitle("dasdas")   ;
-            $book->setDescription("asdasdd");
-            $book->addCategory($cat);
-            $book->setPages(50);
+        $repository = $this->getDoctrine()->getRepository('BookkeeperManagerBundle:Author');
 
-            $author = new Author();
-            $author->setFirstname("boban");
-            $author->setLastname("bobanovic");
-            $em->persist($author);
-            $em->flush();
-            $book->setAuthor($author);
-
-
-            $em->persist($book);
-
-        $em->flush();
+        /** @var $repository \Doctrine\ORM\EntityManager */
 
 //        $query = $repository->createQueryBuilder('a')
-//            ->join('a.AccountData', 'd')
-//            ->where('d.gender = :gender')
-//            ->setParameter('gender', 'female')
-//            ->getQuery();
+//                ->where('a.firstname = :firstname')
+//                ->setParameter('firstname','jovan')
+//                ->getQuery();
 
-//        $products =$qb->select('u')
-//            ->from('book', 'u')
-//            ->where('u.id = ?1')
-//            ->orderBy('u.title', 'ASC');
+        $author = $repository->findTest("boban");
+
+        var_dump($author);
+        die();
+
+
+//            $cat = new Category();
+//            $cat->setName("poezija");
+//            $cat->setDescription("asd");
+//            $em->persist($cat);
+//            $em->flush();
 //
+//            $book = new Book();
+//            $book->setTitle("dasdas")   ;
+//            $book->setDescription("asdasdd");
+//            $book->addCategory($cat);
+//            $book->setPages(50);
 //
-//        $repository = $em->getRepository('BookkeeperManagerBundle:Category');
+//            $author = new Author();
+//            $author->setFirstname("boban");
+//            $author->setLastname("bobanovic");
+//            $em->persist($author);
+//            $em->flush();
+//            $book->setAuthor($author);
 //
-//        $query = $repository->createQueryBuilder('c')
-//            ->where('c.name = :name')
-//            ->setParameter('name', 'bajke')
-//            ->getQuery();
-//        var_dump($query->getResult());
-//        die();
+//            $em->persist($book);
+//            $em->flush();
+
     }
 
 }

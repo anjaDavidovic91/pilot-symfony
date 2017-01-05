@@ -6,11 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Bookkeeper\ManagerBundle\Entity\Book;
 
-
 /**
  * Class Author
  * @package Bookkeeper\ManagerBundle\Entity
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Bookkeeper\ManagerBundle\Repositories\TestRepository")
  * @ORM\Table(name="authors")
  */
 
